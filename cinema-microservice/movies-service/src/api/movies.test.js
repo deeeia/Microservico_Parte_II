@@ -19,8 +19,7 @@ afterAll(async () => {
 })
 
 test('GET /movies', async () => {
-    const response = await supertest(app)
-        .get('/movies');
+    const response = await supertest(app).get('/movies');
 
     expect(response.status).toEqual(200);
     expect(Array.isArray(response.body)).toBeTruthy();
@@ -28,8 +27,7 @@ test('GET /movies', async () => {
 })
 
 test('GET /movies/:id', async () => {
-    const response = await supertest(app)
-        .get('/movies/' + testId);
+    const response = await supertest(app).get('/movies/' + testId);
 
     expect(response.status).toEqual(200);
     expect(response.body).toBeTruthy();
@@ -37,8 +35,7 @@ test('GET /movies/:id', async () => {
 })
 
 test('GET /movies/premieres', async () => {
-    const response = await supertest(app)
-        .get('/movies/premieres');
+    const response = await supertest(app).get('/movies/premieres');
 
     expect(response.status).toEqual(200);
     expect(Array.isArray(response.body)).toBeTruthy();
